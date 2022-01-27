@@ -1,0 +1,9 @@
+{"version": 1,
+"packages":{
+  "path": "./simplebank/sqlc",
+    "name": "simplebank",
+    "engine": "postgresql",
+    "schema": "./simplebank/dbmigration/",
+    "queries": "./simplebank/query/"
+  }
+  }
