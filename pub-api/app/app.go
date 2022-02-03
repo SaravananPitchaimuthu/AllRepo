@@ -31,6 +31,9 @@ func Start() {
 	router.HandleFunc("/customers/{customer_id:[0-9]+}/account", ah.NewAccount).
 		Methods(http.MethodPost).
 		Name("NewAccount")
+	router.HandleFunc("/customers/{customer_id:[0-9]+}/account/{account_id:[0-9]+}", ah.MakeTransaction).
+		Methods(http.MethodPost).
+		Name("NewTransaction")
 
 	address := "127.0.0.1"
 	port := "8080"

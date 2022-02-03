@@ -15,6 +15,13 @@ func (a Account) ToNewAccountResponseDto() *dto.NewAccountResponse {
 	return &dto.NewAccountResponse{AccountId: a.AccountId}
 }
 
+func (a Account) CanWithdraw(amount float64) bool {
+	if amount > a.Amount {
+		return false
+	}
+	return true
+}
+
 const DbTSLayout = "2006-01-02 15:04:05"
 
 func NewAccount(customerId string, account_type string, amount float64) Account {
